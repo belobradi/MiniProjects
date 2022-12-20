@@ -1,0 +1,82 @@
+:root {
+    --bg-page1: #4682b4;
+    --bg-page2: #d2b48c;
+    --bg-page3: #008080;
+    --bg-page4: #6a5acd;
+    --txt-primary: #f4f4f4;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--txt-primary);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#page-1 {background: var(--bg-page1);}
+#page-2 {background: var(--bg-page2);}
+#page-3 {background: var(--bg-page3);}
+#page-4 {background: var(--bg-page4);}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.page > h1 {
+    font-size: 4rem;
+    margin: 20px 0;
+}
+
+.page > p {
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #f4f4f4;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.2s ease-in;
+}
+
+.btn:hover,
+.btn-dark {
+    background: #333;
+    color: #f4f4f4;
+}
+
+.btn-dark:hover {
+    background: #f4f4f4;
+    color: #333;
+}
+
+#page-1 h1 {
+    animation: headline 2s forwards ease-in;
+    transform: translateY(-1600px);
+}
+
+#page-1 p {
+    animation: paragraph 2s forwards 1s ease-in;
+    transform: translateX(-1600px);
+}
+
+@keyframes headline {
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes paragraph {
+    to {
+        transform: translateX(0px);
+    }
+}
