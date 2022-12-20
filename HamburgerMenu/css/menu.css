@@ -1,0 +1,98 @@
+:root {
+    --hamburger-color-bg: #333;
+    --hamburger-color-lines: #f4f4f4;
+    --hamburger-size: 50px;
+    --hamburger-transition: 0.3s;
+}
+
+.menu-wrap {
+    /* z-index: 1; */
+}
+
+.toggler {
+    width: var(--hamburger-size);
+    height: var(--hamburger-size);
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    position: absolute;
+}
+
+.hamburger {
+    background-color: var(--hamburger-color-bg);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--hamburger-size);
+    height: var(--hamburger-size);
+    padding: calc(var(--hamburger-size)*0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.hamburger > div {
+    background-color: var(--hamburger-color-lines);
+    height: calc(var(--hamburger-size)*0.08);
+    width: 100%;
+    position: relative;
+    transition: all var(--hamburger-transition) ease;
+    z-index: 1;
+}
+
+.hamburger > div::before,
+.hamburger > div::after {
+    content: '';
+    background-color: var(--hamburger-color-lines);
+    height: calc(var(--hamburger-size)*0.08);
+    width: 100%;
+    position: absolute;
+    top: calc(var(--hamburger-size)*0.2);
+    transition: all var(--hamburger-transition) ease;
+    z-index: 1;
+}
+
+.hamburger > div::after {
+    top: calc(var(--hamburger-size)*(-0.2));
+}
+
+.toggler:checked + .hamburger > div{
+    transform: rotate(135deg);
+}
+
+.toggler:checked + .hamburger > div::before,
+.toggler:checked + .hamburger > div::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    transition: all 1s ease-in;
+    overflow: hidden;
+    transform: scale(0);
+    border-radius: 50%;
+}
+
+.menu > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggler:checked ~ .menu {
+    visibility: visible;
+    height: 100vh;
+    width: 100vh;
+    background-color: rgb(51, 51, 51, 0.8);
+    background-color: var(--hamburger-color-bg);
+    transform: scale(1);
+    border-radius: 0;
+}
