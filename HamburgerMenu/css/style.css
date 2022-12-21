@@ -1,3 +1,14 @@
+:root {
+    --color-primary: #777;
+    --color-secondary: #333;
+    --color-text: #f4f4f4;
+    --transition-speed: 0.3s;
+    --hamburger-size: 50px;
+    --hamburger-color-bg: var(--color-secondary);
+    --hamburger-color-lines: var(--color-text);
+    --hamburger-transition: var(--transition-speed);
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -6,7 +17,7 @@
 }
 
 body {
-    background-color: #777;
+    background-color: var(--color-primary);
 }
 
 .menu > div > ul {
@@ -19,4 +30,8 @@ body {
     color: var(--hamburger-color-lines);
     font-size: 3rem;
     line-height: 1.6;
+}
+
+.menu > div > ul > li > a:hover {
+    opacity: 0.5;
 }
