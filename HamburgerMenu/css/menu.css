@@ -73,8 +73,7 @@
     top: 0;
     width: 0;
     height: 0;
-    transition: all 1s ease-in;
-    overflow: hidden;
+    transition: all 0.3s ease-in;
     transform: scale(0);
     border-radius: 50%;
 }
@@ -85,14 +84,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    transition: all var(--hamburger-transition) ease-in var(--hamburger-transition);
+    z-index: 2;
 }
 
 .toggler:checked ~ .menu {
     visibility: visible;
+    width: 100vw;
     height: 100vh;
-    width: 100vh;
-    background-color: rgb(51, 51, 51, 0.8);
     background-color: var(--hamburger-color-bg);
     transform: scale(1);
     border-radius: 0;
+}
+
+.toggler:checked ~ .menu > div {
+    opacity: 1;
 }
