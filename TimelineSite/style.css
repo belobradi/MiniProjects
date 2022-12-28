@@ -30,23 +30,56 @@ body {
 }
 
 #timeline ul {
-    background: var(--primary-color);
-    padding: 50px 0;
-}
-
-#timeline ul li {
     list-style: none;
     width: 5px;
     background: #fff;
     margin: 0 auto;
     padding-top: 50px;
-    /* position: relative; */
 }
 
-#timeline ul li div {
+#timeline ul li {
     position: relative;
     bottom: 0;
     width: 400px;
     padding: 1rem;
     background: var(--secondary-color);
+    margin-bottom: 3rem;
+    left: 100px;
+}
+
+#timeline ul li:nth-child(even) {
+    left: -490px;
+}
+
+#timeline ul li:after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    left: -112px;
+    bottom: 0px;
+    border-radius: 50%;
+}
+
+#timeline ul li:nth-child(even)::after {
+    left: 478px;
+}
+
+#timeline ul li:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-right: 30px solid var(--secondary-color);
+    border-bottom: 15px solid transparent;
+    position: absolute;
+    left: -30px;
+    bottom: 0;
+}
+
+#timeline ul li:nth-child(even):before {
+    border-right: none;
+    border-left: 30px solid var(--secondary-color);
+    left: 400px;
 }
