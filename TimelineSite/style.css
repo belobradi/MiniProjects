@@ -156,11 +156,20 @@ body {
     }
 }
 
-@media only screen and (max-width: 649px) {
+@media only screen and (max-width: 649px) and (min-width: 420px) {
     #timeline ul {
         margin: 0 20px;
     }
     #timeline ul li {
         width: 350px;
+    }
+}
+
+@media only screen and (max-width: 419px) {
+    #timeline ul {
+        margin: 0 20px;
+    }
+    #timeline ul li {
+        width: 250px;
     }
 }
