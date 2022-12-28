@@ -83,3 +83,84 @@ body {
     border-left: 30px solid var(--secondary-color);
     left: 400px;
 }
+
+@media only screen and (max-width: 1050px) and (min-width: 850px) {
+    #timeline ul li {
+        width: 300px;
+    }
+    #timeline ul li:nth-child(even) {
+        left: -390px;
+    }
+    #timeline ul li:nth-child(even):after {
+        left: 378px;
+    }
+    #timeline ul li:nth-child(even):before {
+        left: 300px;
+    }
+}
+
+@media only screen and (max-width: 849px) and (min-width: 770px) {
+    #timeline ul li {
+        left: 70px;
+        width: 300px;
+    }
+    #timeline ul li:nth-child(even) {
+        left: -360px;
+    }
+    #timeline ul li:after {
+        left: -82px;
+    }
+    #timeline ul li:nth-child(even):after {
+        left: 348px;
+    }
+    #timeline ul li:nth-child(even):before {
+        left: 300px;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    #timeline ul li {
+        left: 70px;
+    }
+    #timeline ul li:after {
+        left: -82px;
+    }
+    #timeline ul li:nth-child(even) {
+        left: 70px;
+    }
+    #timeline ul li:nth-child(even):before {
+        border-right: 30px solid var(--secondary-color);
+        border-left: none;
+        left: -30px;
+    }
+    #timeline ul li:nth-child(even)::after {
+        left: -82px;
+    }
+}
+
+@media only screen and (max-width: 769px) and (min-width: 700px) {
+    #timeline ul {
+        margin: 0 40px;
+    }
+    #timeline ul li {
+        width: 550px;
+    }
+}
+
+@media only screen and (max-width: 699px) and (min-width: 650px) {
+    #timeline ul {
+        margin: 0 100px;
+    }
+    #timeline ul li {
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 649px) {
+    #timeline ul {
+        margin: 0 20px;
+    }
+    #timeline ul li {
+        width: 350px;
+    }
+}
